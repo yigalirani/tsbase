@@ -9,6 +9,9 @@
     "emitDeclarationOnly": true,
     "outDir": "types",
     "rootDir":".",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "jsx": "react-jsx"
   },
   "exclude": ["node_modules"],
   "include":["src"]  
