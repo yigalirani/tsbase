@@ -1,5 +1,4 @@
 import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
-
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
@@ -7,7 +6,17 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
-import { defineConfig } from "eslint/config";
+import { writeFileSync } from "fs";
+
+function delete_uneeded(key, value) {
+  if (['@typescript-eslint'].includes(key))
+    return '#deleted:' + Object.keys(value).join(',')
+  return value
+}
+function write_config(obj) {
+  const all = JSON.stringify(obj,delete_uneeded, 2);
+  writeFileSync("eslint.config.inspect.json", all);
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,7 +49,7 @@ const import_rules = function () {
 
 
 
-const ans=  defineConfig( [{
+const ans=[{
   ignores: [
     "**/*.html",
     "**/*.css",
@@ -144,7 +153,6 @@ const ans=  defineConfig( [{
     "max-params": "off",
     "no-unreachable": "off",
   },
-}]);
-console.dir(ans)
-
+}];
+write_config(ans)
 export default ans
