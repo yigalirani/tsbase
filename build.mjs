@@ -2,11 +2,12 @@ import * as esbuild from 'esbuild'
 
 esbuild.build({ 
   entryPoints: ['src/index.tsx'],
-  platform: 'node',
+  platform: 'browser',
   bundle: true,
   outdir: './dist',
   sourcemap: true,
-  target: 'node10',
+  target: 'es2020', 
+  format: 'iife', 
   minifySyntax:false, 
   define: {
     'process.env.NODE_ENV': '"development"',
