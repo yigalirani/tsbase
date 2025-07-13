@@ -1,8 +1,0 @@
-{
-  "events": {
-    "restart": "echo restarting at %TIME% ======================="
-  },
-  "watch": ["src","build.mjs","package.json","tsconfig.json"],
-  "ext":"ts,json",
-  "verbose":true
-}  
