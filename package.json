@@ -2,14 +2,16 @@
   "scripts": {
     "watch_build": "node --watch-path=./src build.mjs",
     "watch_tsc": "tsc --watch",
-    "watch_eslint": "node --watch-path=./src --watch build.mjs ./run_eslint.js",
+    "watch_eslint": "node --watch-path=./src --watch-path eslint.config.mjs --watch-path build.mjs  ./run_eslint.mjs",
     "watch_server_node": "node --watch-path=./src --watch dist/index.js dist/index.js",
-    "watch_server":  "npx http-server -p 80"
+    "watch_server": "npx http-server -p 80"
   },
   "devDependencies": {
+    "@eslint/css": "^0.10.0",
     "@eslint/js": "^9.31.0",
     "esbuild": "0.25.6",
     "eslint": "^9.31.0",
+    "eslint-formatter-visualstudio": "^8.40.0",
     "globals": "^16.3.0",
     "typescript": "5.8.3",
     "typescript-eslint": "^8.36.0"
