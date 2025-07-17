@@ -1,11 +1,3 @@
 {
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "biome.configurationPath": ".",
-"biome.lsp.bin": "node_modules\\.bin\\biome.cmd",
-"biome.lsp.trace.server": "messages",
-"biome.requireConfiguration": true,
-"biome.enable": true,
-"biome.path": "./node_modules/@biomejs/biome/bin/biome",
-"biome.suggestInstallingGlobally": false,
-
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

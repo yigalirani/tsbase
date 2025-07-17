@@ -1,16 +1,3 @@
 node_modules
 dist
-dist.*
-data
-*.gen.*
-output
-output.old
-input
-simplified
-map
-meta.json
-tmp
-3dparty
-*.swp
 types
-tmp2

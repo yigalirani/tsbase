@@ -47,36 +47,11 @@ const import_rules = function () {
   }
 }()
 
-
-
 const ans=[{
   ignores: [
-    "**/*.html",
-    "**/*.css",
-    "**/*.txt",
-    "**/*.bat",
-    "**/*.py",
-    "**/*.json",
-    "**/*.md",
-    "**/*.png",
-    "**/*.ico",
-    "**/unused_code",
-    "**/tmp",
-    //"**/tmp2",
-    "**/tmp2/transpiled",
     "**/dist",
     "**/node_modules",
     "**/.git",
-    "**/.vscode",
-    "**/data",
-    "**/3dparty",
-    "**/old",
-    "src/unused_code",
-    "src/unconverted",
-    //"*.js",
-    "types",
-
-    "converter_old"
   ],
 }, ...fixupConfigRules(compat.extends(
 

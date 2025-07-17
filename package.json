@@ -3,8 +3,7 @@
     "watch_build": "node --watch-path=./src build.mjs",
     "watch_tsc": "tsc --watch",
     "watch_eslint": "node --watch-path=./src --watch-path eslint.config.mjs --watch-path build.mjs  ./run_eslint.mjs",
-    "watch_server_node": "node --watch-path=./src --watch dist/index.js dist/index.js",
-    "watch_server": "npx http-server -p 80"
+    "watch_server": "node --watch dist/index.js"
   },
   "devDependencies": {
     "@eslint/css": "^0.10.0",
