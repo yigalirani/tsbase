@@ -9,7 +9,9 @@
     "emitDeclarationOnly": true,
     "outDir": "types",
     "rootDir":".",
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types"],
+    "moduleResolution":"nodenext",
+    "module": "nodenext"
   },
   "include":["src/**/*"]  
 }
