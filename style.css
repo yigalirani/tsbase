@@ -2,3 +2,11 @@ h1{
   background-color: rgb(253, 212, 78);
   text-align: center;
 }
+div{
+  display: flex;
+  border: 1px saddlebrown solid;
+  flex-direction: column;
+}
+.splitter{
+  flex-direction: row;
+}
