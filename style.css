@@ -10,3 +10,6 @@ div{
 .splitter{
   flex-direction: row;
 }
+.text-danger{
+  background-color: pink;
+}
