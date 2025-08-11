@@ -1,4 +1,4 @@
-import * as esbuild from 'esbuild'
+import * as esbuild from './tools/esbuild/node_modules/esbuild/lib/main.js'
 
 esbuild.build({ 
   entryPoints: ['src/index.ts'],

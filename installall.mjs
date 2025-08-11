@@ -9,7 +9,8 @@ async function  runit(cmd){
   })
 }
 async function main(){
-  await runit('cd eslint && npm install')
+  await runit('cd tools/eslint && npm install')
+  await runit('cd tools/esbuild && npm install')
   await  runit('npm install')
 }
 main()
