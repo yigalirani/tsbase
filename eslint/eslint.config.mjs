@@ -79,9 +79,9 @@ const ans=[{
 
   rules: {
     "eqeqeq": ["error", "always", { "null": "ignore" }],
-    "no-unused-vars": "off",
+    "no-unused-vars": "warn",
     ...import_rules,
-    "prefer-const": "off",
+    "prefer-const": "warn",
     "object-shorthand": "warn",
     "no-inner-declarations": "warn",
     "no-duplicate-imports": "warn",
@@ -129,5 +129,7 @@ const ans=[{
     "no-unreachable": "off",
   },
 }];
-write_config(ans)
+const debug_mode=false //change to true to see debug file with all elint setting in json format
+if (debug_mode)
+  write_config(ans)
 export default ans

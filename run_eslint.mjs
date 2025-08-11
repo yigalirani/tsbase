@@ -1,6 +1,7 @@
 const { exec } = await import('node:child_process');
-
-exec('npx eslint .  --color',(error, stdout, stderr) => {
+const cmd='npx --prefix ./eslint  eslint . --config eslint/eslint.config.mjs --color'
+exec(cmd,(error, stdout, stderr) => {
   console.log(`stdout: ${stdout}`);
-  console.error(`stderr: ${stderr}`);
+  if (stderr)
+    console.error(`stderr: ${stderr}`);
 });
