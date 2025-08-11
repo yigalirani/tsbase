@@ -25,25 +25,28 @@ const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
   allConfig: js.configs.all
 });
-const check_import = false//very slow, so turn on when needed
+const check_import = true//very slow, so turn on when needed
 const import_extend = function () {
   if (!check_import)
     return []
   return [
-    "plugin:import/typescript",
-    "plugin:import/recommended"
+    "plugin:import-x/typescript",
+    "plugin:import-x/recommended"
   ]
 }()
 const import_rules = function () {
   if (!check_import)
     return {}
   return {
-    "import/no-unresolved": "off",
-    'import/no-cycle': ['error', {
+    "import-x/no-unresolved": "off",
+    "import-x/no-named-as-default-member":"off",
+    "import-x/no-named-as-default":"off",
+    "import-x/namespace":"off",
+    'import-x/no-cycle': ['error', {
       ignoreExternal: true,  // Skip checking external dependencies - not working due to bug in the plugin
     }],
-    "import/named": "off",
-    "import/default": "off",
+    "import-x/named": "off",
+    "import-x/default": "off",
   }
 }()
 
@@ -79,6 +82,7 @@ const ans=[{
 
   rules: {
     "eqeqeq": ["error", "always", { "null": "ignore" }],
+    'no-extend-native': 'warn',
     "no-unused-vars": "warn",
     ...import_rules,
     "prefer-const": "warn",
