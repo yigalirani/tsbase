@@ -8,19 +8,17 @@ import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 import { writeFileSync } from "fs";
 
-function omitValues(obj) {
-  return Object.fromEntries(
-    Object.keys(obj).map(key => [key, '<details omitted>'])
-  );
-}
-function delete_uneeded(key, value) {
-  if (key==='plugins')
-    return omitValues(value)
-  return value;
-}
-function write_config(obj) {
+function dump_config(obj,filename="eslint.config.inspect.json") { //todo: spinoff to npm package?
+  function delete_uneeded(key, value) {
+    if (key==='plugins')
+      return Object.fromEntries(
+        Object.keys(value).map(key => [key, '<details omitted>']))
+    return value;
+  }  
+  if (!filename)
+    return console.log('skip dump config')
   const all = JSON.stringify(obj,delete_uneeded, 2);
-  writeFileSync("eslint.config.inspect.json", all);
+  writeFileSync(filename, all);
 }
 
 const __filename = fileURLToPath(import.meta.url);
@@ -138,7 +136,5 @@ const ans=[{
     "no-unreachable": "off",
   },
 }];
-const debug_mode=true //change to true to see debug file with all elint setting in json format
-if (debug_mode)
-  write_config(ans)
+dump_config(ans)
 export default ans
