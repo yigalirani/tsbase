@@ -8,10 +8,15 @@ import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 import { writeFileSync } from "fs";
 
+function omitValues(obj) {
+  return Object.fromEntries(
+    Object.keys(obj).map(key => [key, '<details omitted>'])
+  );
+}
 function delete_uneeded(key, value) {
-  if (['@typescript-eslint'].includes(key))
-    return '#deleted:' + Object.keys(value).join(',')
-  return value
+  if (key==='plugins')
+    return omitValues(value)
+  return value;
 }
 function write_config(obj) {
   const all = JSON.stringify(obj,delete_uneeded, 2);
@@ -133,7 +138,7 @@ const ans=[{
     "no-unreachable": "off",
   },
 }];
-const debug_mode=false //change to true to see debug file with all elint setting in json format
+const debug_mode=true //change to true to see debug file with all elint setting in json format
 if (debug_mode)
   write_config(ans)
 export default ans
