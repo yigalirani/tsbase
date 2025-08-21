@@ -11,7 +11,8 @@
     "rootDir":".",
     "typeRoots": ["./node_modules/@types"],
     "moduleResolution":"nodenext",
-    "module": "nodenext"
+    "module": "nodenext",
+    "allowUnreachableCode":false
   },
   "include":["src/**/*"]  
 }
