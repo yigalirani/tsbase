@@ -4,11 +4,11 @@ function filterit(txt){
 }
 const timing='set TIMING=1&'
 //const timing=''
-const cmd=timing+'npx --prefix ./tools/eslint  eslint . --debug --config ./tools/eslint/eslint.config.mjs --color '
+const cmd=timing+'npx --prefix ./eslint  eslint . --debug --config ./eslint/eslint_config.mjs --color '
 exec(cmd,(error, stdout, stderr) => {
   console.log(`stdout: ${stdout}`);
   if (stderr)
     console.error(`stderr: ${filterit(stderr)}`);
 });
 
-exec('npx --prefix ./tools/eslint  eslint . --config ./tools/eslint/eslint.config.mjs eslint --inspect-config')
+exec('npx --prefix ./eslint  eslint . --config ./eslint/eslint_config.mjs eslint --inspect-config')

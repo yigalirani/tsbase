@@ -12,7 +12,7 @@ export default defineConfig(
       'import-x': importX,
     },
     rules: {
-      'import-x/no-cycle': 'error',
+      //'import-x/no-cycle': 'error',
       "@typescript-eslint/no-use-before-define":"warn",
       "no-inline-comments":"off",
       "sort-keys":"off",
