@@ -21,7 +21,9 @@ export default defineConfig(
       "id-length":"off",
       "one-var":"off",
       "curly":"off",
-      "capitalized-comments":"off"
+      "capitalized-comments":"off",
+      "sort-imports":"off",
+      "camelcase":"off"
     },
     languageOptions: {
       globals: {

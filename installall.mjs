@@ -2,7 +2,7 @@ import { exec } from 'node:child_process';
 
 async function  runit(cmd){
   
-  exec(cmd,(error, stdout, stderr)=>{
+  await exec(cmd,(error, stdout, stderr)=>{
     console.log(cmd)
     console.log(stdout)
     console.error(stderr)
