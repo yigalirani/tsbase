@@ -1,0 +1,123 @@
+[
+  {
+    "files": [
+      "**/*.ts"
+    ],
+    "plugins": [
+      "js",
+      "importX",
+      "tseslint"
+    ],
+    "languageOptions": {
+      "globals": {
+        "__dirname": false,
+        "__filename": false,
+        "AbortController": false,
+        "AbortSignal": false,
+        "atob": false,
+        "Blob": false,
+        "BroadcastChannel": false,
+        "btoa": false,
+        "Buffer": false,
+        "ByteLengthQueuingStrategy": false,
+        "clearImmediate": false,
+        "clearInterval": false,
+        "clearTimeout": false,
+        "CompressionStream": false,
+        "console": false,
+        "CountQueuingStrategy": false,
+        "crypto": false,
+        "Crypto": false,
+        "CryptoKey": false,
+        "CustomEvent": false,
+        "DecompressionStream": false,
+        "DOMException": false,
+        "Event": false,
+        "EventTarget": false,
+        "exports": true,
+        "fetch": false,
+        "File": false,
+        "FormData": false,
+        "global": false,
+        "Headers": false,
+        "Intl": false,
+        "MessageChannel": false,
+        "MessageEvent": false,
+        "MessagePort": false,
+        "module": false,
+        "performance": false,
+        "PerformanceEntry": false,
+        "PerformanceMark": false,
+        "PerformanceMeasure": false,
+        "PerformanceObserver": false,
+        "PerformanceObserverEntryList": false,
+        "PerformanceResourceTiming": false,
+        "process": false,
+        "queueMicrotask": false,
+        "ReadableByteStreamController": false,
+        "ReadableStream": false,
+        "ReadableStreamBYOBReader": false,
+        "ReadableStreamBYOBRequest": false,
+        "ReadableStreamDefaultController": false,
+        "ReadableStreamDefaultReader": false,
+        "Request": false,
+        "require": false,
+        "Response": false,
+        "setImmediate": false,
+        "setInterval": false,
+        "setTimeout": false,
+        "structuredClone": false,
+        "SubtleCrypto": false,
+        "TextDecoder": false,
+        "TextDecoderStream": false,
+        "TextEncoder": false,
+        "TextEncoderStream": false,
+        "TransformStream": false,
+        "TransformStreamDefaultController": false,
+        "URL": false,
+        "URLSearchParams": false,
+        "WebAssembly": false,
+        "WritableStream": false,
+        "WritableStreamDefaultController": false,
+        "WritableStreamDefaultWriter": false
+      }
+    }
+  },
+  {
+    "ignores": [
+      "**/dist",
+      "**/types"
+    ],
+    "files": [
+      "**/*.ts"
+    ],
+    "rules": {
+      "eqeqeq": [
+        "error",
+        "always",
+        {
+          "null": "ignore"
+        }
+      ],
+      "no-extend-native": "warn",
+      "no-unused-vars": "warn",
+      "prefer-const": "warn",
+      "object-shorthand": "warn",
+      "no-inner-declarations": "warn",
+      "no-duplicate-imports": "warn",
+      "no-unused-labels": "off",
+      "no-empty-pattern": "off",
+      "no-use-before-define": "off",
+      "no-self-compare": "warn",
+      "no-unused-expressions": "warn",
+      "max-params": "warn",
+      "no-param-reassign": "off",
+      "logical-assignment-operators": "warn",
+      "no-func-assign": "warn",
+      "no-var": "warn",
+      "no-loop-func": "warn",
+      "import-x/no-cycle": "off",
+      "@typescript-eslint/no-use-before-define": "warn"
+    }
+  }
+]
