@@ -4,7 +4,7 @@ import importX from 'eslint-plugin-import-x';
 import globals from 'globals';
 import { defineConfig,globalIgnores  } from "eslint/config";
 export default defineConfig(
-  globalIgnores(["dist/", "types/"]),
+  globalIgnores(["**/dist/", "**/types/"]),
   eslint.configs.all, //taking all rules from eslint, truning select ones off below
   tseslint.configs.strict, 
   {
@@ -23,7 +23,10 @@ export default defineConfig(
       "curly":"off",
       "capitalized-comments":"off",
       "sort-imports":"off",
-      "camelcase":"off"
+      "camelcase":"off",
+      "func-names":"off",
+      "no-plusplus":"off",
+      "no-magic-numbers":"off"
     },
     languageOptions: {
       globals: {
