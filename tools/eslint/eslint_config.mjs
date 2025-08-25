@@ -2,36 +2,42 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import importX from 'eslint-plugin-import-x';
 import globals from 'globals';
-import { defineConfig,globalIgnores  } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 export default defineConfig(
-  globalIgnores(["**/dist/", "**/types/"]),
-  eslint.configs.all, //taking all rules from eslint, truning select ones off below
-  tseslint.configs.strict, 
+  globalIgnores(["**/dist/", "types/", '**/tmp2/', '**/tmp/', '**/unused_code/', '**/old', '**/converter_old/', '**/try/']),
+  eslint.configs.recommended, //taking all rules from eslint, truning select ones off below
+  tseslint.configs.recommended,
   {
     plugins: {
       'import-x': importX,
     },
     rules: {
       //'import-x/no-cycle': 'error', //commented out because slow, turn on when needed
-      "@typescript-eslint/no-use-before-define":"warn", //turning this one on because i love it
-      "no-inline-comments":"off",
-      "sort-keys":"off",
-      "func-style":"off",
-      "no-console":"off",
-      "id-length":"off",
-      "one-var":"off",
-      "curly":"off",
-      "capitalized-comments":"off",
-      "sort-imports":"off",
-      "camelcase":"off",
-      "func-names":"off",
-      "no-plusplus":"off",
-      "no-magic-numbers":"off"
+      "@typescript-eslint/no-unused-vars": ["warn", {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^(_|debug_)",
+        caughtErrorsIgnorePattern: "^_",
+      }],
+      //less than recomended
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-unused-labels": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-use-before-define": [
+        "warn",
+        {
+          "ignoreTypeReferences": false
+        }
+      ],
+      //more than recomended
+      "max-params":"warn",
+      "complexity":"warn",
+      "eqeqeq": ["error", "always", { "null": "ignore" }],
+
     },
     languageOptions: {
       globals: {
         ...globals.node,
       },
     },
-  },
+  }
 );
