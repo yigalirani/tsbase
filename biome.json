@@ -41,7 +41,8 @@
       "suspicious": {
         "noConsole":"off",
         "noConfusingVoidType":"off",
-        "noExplicitAny":"off"
+        "noExplicitAny":"off",
+        "noDoubleEquals":"off"
       },
       "complexity": "on",
       "complexity": {

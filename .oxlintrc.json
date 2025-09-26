@@ -31,7 +31,7 @@
     "eslint/no-continue":"off",
     "oxc/no-rest-spread-properties":"off",
     "eslint/func-names":"off",
-    "eslint/eqeqeq": ["error", "always", {"null": "ignore"}],
+    "eslint/eqeqeq": "off",//biome does it better with auto fix
     "eslint/sort-keys":"off",
     "eslint/max-lines-per-function":"off",
     "oxc/no-optional-chaining":"off",

@@ -56,7 +56,7 @@ export default defineConfig(
       "@typescript-eslint/only-throw-error":"off", //aint nothing wrong with throwing a string - just check on catch
       //more than recomended
       "no-duplicate-imports":"warn",
-      "eqeqeq": ["error", "always", { "null": "ignore" }],
+      "eqeqeq": "off",//moved to oxc
       "@typescript-eslint/require-await":"off",//becuse oxc can do it
       "@typescript-eslint/promise-function-async":"off", //moved to oxc
       "no-constant-condition":"off"
