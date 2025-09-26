@@ -3,6 +3,26 @@
   // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
+      {
+      "label": "warn-tsc",
+      "type": "shell",
+      "command": "npm run watch_tsc",
+    },  
+    {
+      "label": "warn-eslint",
+      "type": "shell",
+      "command": "npm run run_eslint",
+    },   
+    {
+      "label": "warn-oxlint",
+      "type": "shell",
+      "command": "npm run run_oxlint",
+    },       
+    {
+      "label": "warn-biome",
+      "type": "shell",
+      "command": "npm run run_biome",
+    },            
     {
       "label":"server",
       "type":"shell",
@@ -13,22 +33,17 @@
       "type":"shell",
       "command":"npm run   watch_build",
     },
-    {
-      "label": "tsc",
-      "type": "shell",
-      "command": "npm run  watch_tsc",
-    },  
-    {
-      "label": "eslint",
-      "type": "shell",
-      "command": "npm run watch_eslint",
-    },      
+
+  
     {
       "label": "runall",
       "dependsOn": [
         "build",
-        "eslint",
-        "tsc",
+      "warn-tsc",
+        "warn-eslint",
+        "warn-biome",
+        "warn-oxlint",
+
         "server"
       ]
     }    

@@ -18,8 +18,8 @@ const filterit = makeFilter();
 
 const timing = 'set TIMING=1&';
 //const timing = '';
-const cmd = timing + 'npx --prefix ./tools/eslint eslint . --debug --config ./tools/eslint/eslint_config.mjs --color';
-
+const cmd = timing + 'npx eslint . --debug --color ';
+const start=Date.now()
 const child = spawn(cmd, { shell: true });
 
 child.stdout.on('data', (data) => {
@@ -32,8 +32,10 @@ child.stderr.on('data', (data) => {
 });
 
 child.on('close', (code) => {
-  console.log(`process exited with code ${code}`);
+  const end=Date.now()
+  const duration=(end-start)
+  console.warn(`process exited with code ${code} ${duration} ms`);
 });
 
 
-exec('npx --prefix ./tools/eslint  eslint . --config ./tools/eslint/eslint_config.mjs eslint --inspect-config')
+exec('npx --prefix ./tools/eslint  eslint .  eslint --inspect-config')
