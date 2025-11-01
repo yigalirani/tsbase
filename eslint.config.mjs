@@ -59,7 +59,8 @@ export default defineConfig(
       "eqeqeq": "off",//moved to oxc
       "@typescript-eslint/require-await":"off",//becuse oxc can do it
       "@typescript-eslint/promise-function-async":"off", //moved to oxc
-      "no-constant-condition":"off"
+      "no-constant-condition":"off",
+      "@typescript-eslint/unified-signatures":"off"//rule crashes in my case
     },
     languageOptions: {
       globals: {

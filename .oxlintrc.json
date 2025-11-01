@@ -87,6 +87,12 @@
     "typescript-eslint/no-use-before-defdine":"warn",
     "unicorn/prefer-modern-dom-apis":"off",
     "eslint/class-methods-use-this":"off",
-    "eslint/no-return-assign":"off"
+    "eslint/no-return-assign":"off",
+    "eslint/no-param-reassign":"off",//nitrrogen is based on param reasigna
+    "unicorn/no-array-callback-reference":"off",//it does make sense, todo
+    "eslint/no-warning-comments":"off",//just a silly warrning that disallow todo
+    "unicorn/prefer-top-level-await":"off", //top level await causes other problems
+    "unicorn/no-empty-file":"off", //i do have files that contain only commented out code. nothing wrong with that
+    "@typescript-eslint/strict-boolean-expressions": "off" //bad rule because it prohits pattern that i like
   }
 }

@@ -10,9 +10,10 @@
     "outDir": "types",
     "rootDir":".",
     "typeRoots": ["./node_modules/@types"],
-    "moduleResolution":"nodenext",
-    "module": "nodenext",
-    "allowUnreachableCode":false
+    "moduleResolution":"bundler",
+    "module": "preserve",
+    "allowImportingTsExtensions":true,
+    "allowJs": true
   },
-  "include":["src/**/*"]  
+  "include":["src/**/*","scripts/**/*","eslint.config.mjs" ]
 }
