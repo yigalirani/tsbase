@@ -1,14 +1,14 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import importX from 'eslint-plugin-import-x';
+import { importX } from 'eslint-plugin-import-x'
 import globals from 'globals';
 import { defineConfig, globalIgnores } from "eslint/config";
-console.log('import.meta.dirname',import.meta.dirname)
+
 export default defineConfig(
   globalIgnores(["**/dist/", "**/types/", '**/tmp2/', '**/tmp/', '**/unused_code/', '**/old', '**/converter_old/', '**/try/','**/node_modules/','**/*.mjs',"**/*.js"]),
-  eslint.configs.recommended, //taking all rules from eslint, truning select ones off below
-  //tseslint.configs.recommended,
-  //tseslint.configs.recommendedTypeChecked,
+  eslint.configs.recommended,
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   tseslint.configs.strictTypeChecked,
   {
     languageOptions: {
@@ -17,13 +17,17 @@ export default defineConfig(
         tsconfigRootDir: import.meta.dirname,
       },
     },
+    settings: {
+      'import-x/resolver': {
+        typescript: true,
+        node: true,
+      },
+    },
   },  
   {
-    plugins: {
-      'import-x': importX,
-    },
+
     rules: {
-      //'import-x/no-cycle': 'error', //commented out because slow, turn on when needed
+      'import-x/no-cycle': 'error', 
       "@typescript-eslint/no-unused-vars": "off", //turned off because biome does it faster
       "@typescript-eslint/no-unsafe-type-assertion":"off",
       //less than recomended
